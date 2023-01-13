@@ -9,3 +9,4 @@ RSpec.describe Employee do
       expect(customer_service).to be_a(Department)
     end
   end
+end
