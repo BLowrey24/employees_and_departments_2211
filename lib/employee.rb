@@ -1,7 +1,11 @@
 class Employee 
-  attr_reader
+  attr_reader :name,
+              :age,
+              :salary
 
-  def initialize()
-    
+  def initialize(attributes)
+    @name = attributes[:name]
+    @age = attributes[:age].to_i
+    @salary = attributes[:salary].delete('$').to_f
   end
 end
