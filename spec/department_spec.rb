@@ -27,4 +27,13 @@ RSpec.describe Employee do
       expect(customer_service.employees).to eq([bobbi, aaron])
     end
   end
+
+  describe '#expenses' do
+    it 'can add to expenses' do
+      customer_service.expenses(100)
+      customer_service.expenses(25)
+
+      expect(customer_service.expences).to eq(125)
+    end
+  end
 end
