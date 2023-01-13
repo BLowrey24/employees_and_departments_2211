@@ -7,7 +7,7 @@ let(:budget) {Budget.new(2022)}
 
   describe '#initialize' do
     it 'exists' do
-      expect(buget).to be_a(Budget)
+      expect(budget).to be_a(Budget)
     end
 
     it 'has attributes' do
