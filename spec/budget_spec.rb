@@ -32,4 +32,18 @@ let(:emergency_services) { Department.new("Emergency Services") }
       expect(budget.departments).to eq([customer_service, front_office, emergency_services])
     end
   end
+
+  describe '#departments_under_budget' do
+    it 'can list all departments with expenses less than $500' do
+      customer_service.expense(125)
+      front_office.expense(600)
+      emergency_services.expense(500)
+
+      budget.add_department(customer_service)
+      budget.add_department(front_office)
+      budget.add_department(emergency_services)
+
+      expect(budget.departments_under_budget).to eq([customer_service, emergency_services])
+    end
+  end
 end
