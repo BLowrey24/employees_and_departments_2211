@@ -11,7 +11,7 @@ let(:emergency_services) { Department.new("Emergency Services") }
 
 let(:bobbi) { Employee.new( { name: "Bobbi Jaeger", age: "30", salary: "$100000" } ) }
 let(:aaron) { Employee.new( { name: "Aaron Tanaka", age: "25", salary: "$90000" } ) }
-
+let(:boston) { Employee.new( { name: "Boston", age: "19", salary: "$80000" } )}
 
 
   describe '#initialize' do
@@ -58,8 +58,14 @@ let(:aaron) { Employee.new( { name: "Aaron Tanaka", age: "25", salary: "$90000" 
       customer_service.hire(aaron)
       
       budget.add_department(customer_service)
-      
+  
       expect(budget.employee_salaries).to eq([100000,90000])
-    do
+
+      front_office.hire(boston)
+
+      budget.add_department(front_office)
+
+      expect(budget.employee_salaries).to eq([100000,90000,80000])
+    end
   end
 end

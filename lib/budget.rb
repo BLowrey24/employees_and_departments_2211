@@ -13,4 +13,14 @@ class Budget
   def departments_under_budget
     @departments.select { |department| department.expenses < 500}
   end
+
+  def employee_salaries
+    salaries = []
+    @departments.each do |department|
+      department.employees.each do |employee|
+        salaries << employee.salary
+      end
+    end
+    salaries
+  end
 end
