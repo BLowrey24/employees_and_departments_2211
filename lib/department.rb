@@ -1,5 +1,5 @@
 class Department
-  attr_reader :name, :employees, :expences
+  attr_reader :name, :employees, :expenses
 
   def initialize(name)
     @name = name
@@ -11,5 +11,7 @@ class Department
     employees << employee
   end
 
-
+  def expense(amount)
+    @expenses += amount
+  end
 end

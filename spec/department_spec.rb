@@ -15,7 +15,7 @@ RSpec.describe Employee do
     it 'has attributes' do
       expect(customer_service.name).to eq("Customer Service")
       expect(customer_service.employees).to eq([])
-      expect(customer_service.expences).to eq(0)
+      expect(customer_service.expenses).to eq(0)
     end
   end
 
@@ -30,10 +30,10 @@ RSpec.describe Employee do
 
   describe '#expenses' do
     it 'can add to expenses' do
-      customer_service.expenses(100)
-      customer_service.expenses(25)
-
-      expect(customer_service.expences).to eq(125)
+      customer_service.expense(100)
+      customer_service.expense(25)
+      
+      expect(customer_service.expenses).to eq(125)
     end
   end
 end
