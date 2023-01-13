@@ -4,9 +4,14 @@ require './lib/department'
 
 RSpec.describe Budget do
 let(:budget) {Budget.new(2022)}
+
 let(:customer_service) { Department.new("Customer Service") }
 let(:front_office) { Department.new("Front Office") }
 let(:emergency_services) { Department.new("Emergency Services") }
+
+let(:bobbi) { Employee.new( { name: "Bobbi Jaeger", age: "30", salary: "$100000" } ) }
+let(:aaron) { Employee.new( { name: "Aaron Tanaka", age: "25", salary: "$90000" } ) }
+
 
 
   describe '#initialize' do
@@ -45,5 +50,16 @@ let(:emergency_services) { Department.new("Emergency Services") }
 
       expect(budget.departments_under_budget).to eq([customer_service])
     end
+  end
+
+  describe '#employee_salaries' do
+    it 'can list all employee salaries' do
+      customer_service.hire(bobbi)
+      customer_service.hire(aaron)
+      
+      budget.add_department(customer_service)
+      
+      expect(budget.employee_salaries).to eq([100000,90000])
+    do
   end
 end
