@@ -9,4 +9,8 @@ class Budget
   def add_department(department)
     departments << department
   end
+
+  def departments_under_budget
+    @departments.select { |department| department.expenses < 500}
+  end
 end
