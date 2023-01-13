@@ -15,6 +15,7 @@ RSpec.describe Employee do
     it 'has attributes' do
       expect(customer_service.name).to eq("Customer Service")
       expect(customer_service.employees).to eq([])
+      expect(customer_service.expences).to eq(0)
     end
   end
 
